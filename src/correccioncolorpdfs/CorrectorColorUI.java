@@ -259,7 +259,7 @@ public class CorrectorColorUI extends javax.swing.JFrame {
         if (fd.getFile() != null) {
             rutaPDF = fd.getDirectory();
             nombrePDF = fd.getFile();
-            setTitle("Corrector Color PDF  " + rutaPDF + " - GASO");
+            setTitle("Seguridad para PDFs  " + rutaPDF + " - FunParticipar");
             bConvertir.setEnabled(true);
             cRutaPDF.setText(nombrePDF);
         }
@@ -295,23 +295,23 @@ public class CorrectorColorUI extends javax.swing.JFrame {
 
                     //Inviertiendo colores
                     //@see http://stackoverflow.com/questions/8662349/convert-negative-image-to-positive
-                    for (int x = 0; x < image.getWidth(); x++) {
-                        for (int y = 0; y < image.getHeight(); y++) {
-                            int rgba = image.getRGB(x, y);
-                            //Hexa a reemplazar e9e9e1 R=233|G=233|B=225
-                            Color col = new Color(rgba, true);
-                            col = new Color(255 - col.getRed(),
-                                    255 - col.getGreen(),
-                                    255 - col.getBlue());
-
-                            //Si color es igual al invertido - cambiarlo a blanco
-                            if (col.getRGB() == -1447455) {
-                                col = new Color(255, 255, 255);
-                            }
-                            //System.out.println("col.getR = " + col.getRGB());
-                            image.setRGB(x, y, col.getRGB());
-                        }
-                    }
+//                    for (int x = 0; x < image.getWidth(); x++) {
+//                        for (int y = 0; y < image.getHeight(); y++) {
+//                            int rgba = image.getRGB(x, y);
+//                            //Hexa a reemplazar e9e9e1 R=233|G=233|B=225
+//                            Color col = new Color(rgba, true);
+//                            col = new Color(255 - col.getRed(),
+//                                    255 - col.getGreen(),
+//                                    255 - col.getBlue());
+//
+//                            //Si color es igual al invertido - cambiarlo a blanco
+//                            if (col.getRGB() == -1447455) {
+//                                col = new Color(255, 255, 255);
+//                            }
+//                            //System.out.println("col.getR = " + col.getRGB());
+//                            image.setRGB(x, y, col.getRGB());
+//                        }
+//                    }
 //                    File outputfile = new File(destinationDir + fileName + "_" + pageNumber + ".png");
 //                    System.out.println("Image Created -> " + outputfile.getName());
 //                    ImageIO.write(image, "png", outputfile);
@@ -329,7 +329,7 @@ public class CorrectorColorUI extends javax.swing.JFrame {
                     
                 }
                 document.close();
-                rutaPDFImprimible = rutaPDF + nombrePDFOriginal + "_imprimible.pdf";
+                rutaPDFImprimible = rutaPDF + nombrePDFOriginal + "_img.pdf";
                 documentoCool.save(rutaPDFImprimible);
                 documentoCool.close();
                 
